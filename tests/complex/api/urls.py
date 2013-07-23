@@ -1,7 +1,3 @@
-try:
-    from django.conf.urls import *
-except ImportError:  # Django<=1.4
-    from django.conf.urls.defaults import *
 from tastypie.api import Api
 from complex.api.resources import PostResource, ProfileResource, CommentResource, UserResource, GroupResource
 

@@ -1,6 +1,6 @@
 try:
     from django.conf.urls import patterns, url, include
-except ImportError:  # Django<=1.4
+except ImportError:  # Django < 1.4
     from django.conf.urls.defaults import patterns, url, include
 
 from tastypie.api import Api

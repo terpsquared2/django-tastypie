@@ -133,9 +133,9 @@ Another alternative approach is to override the ``dispatch`` method::
 
     # urls.py
     try:
-        from django.conf.urls import *
-    except ImportError:  # Django<=1.4
-        from django.conf.urls.defaults import *
+        from django.conf.urls import include, patterns, url
+    except:  # Django < 1.4
+        from django.conf.urls.defaults import include, patterns, url
     from myapp.api import EntryResource
 
     entry_resource = EntryResource()
@@ -155,9 +155,9 @@ We leave the CRUD methods of the resource alone, choosing to add a new endpoint
 at ``/api/v1/notes/search/``::
 
     try:
-        from django.conf.urls import *
-    except ImportError:  # Django<=1.4
-        from django.conf.urls.defaults import *
+        from django.conf.urls import include, patterns, url
+    except:  # Django < 1.4
+        from django.conf.urls.defaults import include, patterns, url
     from django.core.paginator import Paginator, InvalidPage
     from django.http import Http404
     from haystack.query import SearchQuerySet

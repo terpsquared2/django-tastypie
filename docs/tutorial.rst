@@ -143,9 +143,9 @@ do this, we simply instantiate the resource in our URLconf and hook up its
 
     # urls.py
     try:
-        from django.conf.urls import *
-    except ImportError:  # Django<=1.4
-        from django.conf.urls.defaults import *
+        from django.conf.urls import include, patterns, url
+    except:  # Django < 1.4
+        from django.conf.urls.defaults import include, patterns, url
     from myapp.api import EntryResource
 
     entry_resource = EntryResource()
@@ -268,9 +268,9 @@ following::
 
     # urls.py
     try:
-        from django.conf.urls import *
-    except ImportError:  # Django<=1.4
-        from django.conf.urls.defaults import *
+        from django.conf.urls import include, patterns, url
+    except:  # Django < 1.4
+        from django.conf.urls.defaults import include, patterns, url
     from tastypie.api import Api
     from myapp.api import EntryResource, UserResource
 

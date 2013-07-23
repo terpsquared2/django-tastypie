@@ -4,9 +4,9 @@ import warnings
 import django
 from django.conf import settings
 try:
-    from django.conf.urls import patterns, url
-except ImportError:  # Django<=1.4
-    from django.conf.urls.defaults import patterns, url
+    from django.conf.urls import include, patterns, url
+except:  # Django < 1.4
+    from django.conf.urls.defaults import include, patterns, url
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned, ValidationError
 from django.core.urlresolvers import NoReverseMatch, reverse, resolve, Resolver404, get_script_prefix
 from django.db import transaction
